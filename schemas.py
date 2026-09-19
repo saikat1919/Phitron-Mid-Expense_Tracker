@@ -10,7 +10,7 @@ class CreateUser(BaseModel):
     password: Annotated[str, Field(..., min_length=8)]
 
 class CreateTransaction(BaseModel):
-    id: int
+    # id: int   # Uncomment this line while testing
     title: Annotated[str, Field(..., description="Enter a title", min_length=1, max_length=50)]
     amount: Annotated[float, Field(..., gt=0)]
     type: Literal["income", "expense"]
